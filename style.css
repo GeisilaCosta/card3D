@@ -1,0 +1,45 @@
+/* Adicione esses estilos ao seu arquivo style.css */
+
+.wrapper {
+    perspective: 1000px; /* Adiciona profundidade à cena */
+  }
+  
+  .card-wrapper {
+    position: relative;
+    width: 300px; /* Largura do cartão */
+    height: 200px; /* Altura do cartão */
+    margin: 40px auto; /* Centraliza o cartão */
+  }
+  
+  .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Habilita a transformação 3D */
+    transition: transform 0.5s; /* Adiciona uma transição suave */
+    backface-visibility: hidden; /* Esconde o lado de trás do cartão */
+  }
+  
+  .card-top {
+    transform: rotateY(0deg); /* Inicialmente, o cartão está virado para cima */
+  }
+  
+  .card-main {
+    transform: rotateY(180deg); /* Inicialmente, o cartão está virado para baixo */
+  }
+  
+  .card-wrapper:hover .card-top {
+    transform: rotateY(-180deg); /* Quando o mouse está sobre o cartão, vira o cartão para baixo */
+  }
+  
+  .card-wrapper:hover .card-main {
+    transform: rotateY(0deg); /* Quando o mouse está sobre o cartão, vira o cartão para cima */
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz com que a imagem seja redimensionada para caber no cartão */
+  }
